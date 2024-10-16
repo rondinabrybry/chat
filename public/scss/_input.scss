@@ -1,0 +1,115 @@
+.file-upload {
+  transition: 0.2s background-color ease;
+  &.is-dragover {
+    background-color: #70707057;
+  }
+
+  & > .uploading,
+  .success-upload {
+    display: none;
+  }
+}
+
+input {
+  border: solid 1px $color-mid-text;
+  font-size: $font-m;
+  padding: $size-s $size-m;
+  color: $color-dark-text;
+  // background-color: $color-lixght-tet;
+  // @include box-shadow($color-dark-text);
+  border-radius: $size-xs;
+  width: 100%;
+}
+
+.avatar-select {
+  img,
+  .card {
+    // height: 8em;
+    width: 100%;
+    border: solid 1px $color-mid-text;
+    padding: $size-s;
+    border-radius: $size-m;
+    @include transition("ease", all, 0.1s);
+    cursor: pointer;
+    align-items: center;
+  }
+
+  input[type="radio"] {
+    display: none;
+  }
+
+  input[type="radio"]:checked + img,
+  input[type="radio"]:checked + .card {
+    // border: solid 4px $color-accent;
+    // padding: 2rem 5rem;
+    // font-size: $size-l;
+    background-color: $color-accent;
+    color: $color-dark-text;
+    transform: scale(0.9);
+  }
+}
+
+button {
+  border-style: none;
+  font-size: $font-m;
+  padding: $size-m $size-l;
+  color: $color-light-text;
+  background-color: $color-primary;
+  border-radius: $size-m;
+  cursor: pointer;
+  visibility: visible;
+
+  &.secondary {
+    background-color: $color-secondary;
+    color: $color-light-text;
+    border-radius: $size-m;
+  }
+
+  &.accent {
+    background-color: $color-accent;
+    color: $color-dark-text;
+    border-radius: $size-m;
+  }
+
+  &.outline {
+    background-color: transparent;
+    color: $color-dark-text;
+    border: solid 1px $color-dark-text;
+    border-radius: $size-m;
+  }
+
+  &:hover {
+    // @include box-shadow($color-dark-text);
+  }
+
+  &.invisible {
+    visibility: hidden;
+  }
+
+  &.m {
+    min-width: calc($size-m * 3);
+  }
+
+  &.xl {
+    min-width: calc($size-xl * 4);
+  }
+
+  &.xxl {
+    min-width: calc($size-xxl * 5);
+  }
+
+  &.grow {
+    flex-grow: 1;
+  }
+}
+
+.page {
+  position: relative;
+  &.show {
+    display: flex;
+  }
+
+  &.hide {
+    display: none;
+  }
+}

@@ -1,0 +1,178 @@
+.icon {
+    display: inline-block;
+    height: 1em;
+    width: 1em;
+    // transform: translateY(18%) scale(115%, 115%);
+    margin-right: 5px;
+
+    &.small {
+        height: 0.8rem;
+        width: 0.8rem;
+    }
+
+    &.large {
+        height: 3rem;
+        width: 3rem;
+    }
+
+    &.responsive {
+        height: 5rem;
+        width: 5rem;
+    }
+
+    @media only screen and (max-width: 650px) {
+        &.responsive {
+            height: 3rem;
+            width: 3rem;
+        }
+    }
+
+    &.larger {
+        height: 6rem;
+        width: 6rem;
+    }
+
+    &.extra-large {
+        height: 9rem;
+        width: 9rem;
+    }
+
+    &.fill-height {
+        height: 100%;
+        aspect-ratio: 1/1;
+    }
+
+    &.expand {
+        width: 100%;
+        height: fit-content;
+
+        &-contain {
+            width: 100%;
+            height: 100%;
+            transform: scale(80%, 80%);
+        }
+    }
+
+    //Icon Colors
+    &.light {
+        @include recolor($color-light-text, 1);
+    }
+
+    &.dark {
+        @include recolor($color-dark-text, 1);
+    }
+
+    &.gray-color {
+        @include recolor($color-mid-text, 1);
+    }
+
+    &.positive {
+        @include recolor($color-success, 1);
+    }
+
+    &.negative {
+        @include recolor($color-error, 1);
+    }
+
+    &.html {
+        content: url("../resources/icons/html.svg");
+    }
+
+    &.css {
+        content: url("../resources/icons/css.svg");
+    }
+
+    &.sass {
+        content: url("../resources/icons/sass.svg");
+    }
+
+    &.javascript {
+        content: url("../resources/icons/javascript.svg");
+    }
+
+    &.jquery {
+        content: url("../resources/icons/jquery.svg");
+    }
+
+    &.mysql {
+        content: url("../resources/icons/mysql.svg");
+    }
+
+    &.java {
+        content: url("../resources/icons/java.svg");
+    }
+
+    &.php {
+        content: url("../resources/icons/php.svg");
+    }
+
+    &.python {
+        content: url("../resources/icons/python.svg");
+    }
+
+    &.godot {
+        content: url("../resources/icons/godot.svg");
+    }
+
+    &.c {
+        content: url("../resources/icons/c.svg");
+    }
+
+    &.c-sharp {
+        content: url("../resources/icons/c-sharp.svg");
+    }
+
+    &.burger-menu {
+        content: url("../resources/icons/burger-menu.svg");
+    }
+
+    &.code {
+        content: url("../resources/icons/code.svg");
+    }
+
+    &.down-arrow {
+        content: url("../resources/icons/down-arrow.svg");
+    }
+
+    &.circle-dashed {
+        content: url("../resources/icons/circle-dashed.svg");
+    }
+
+}
+
+.hovering-anim {
+    animation: hovering 1.5s ease 9s infinite forwards;
+}
+
+@keyframes hovering {
+    0% {
+        transform: translateY(0%);
+    }
+
+    60% {
+        transform: translateY(-35%);
+    }
+
+    100% {
+        transform: translateY(0%);
+    }
+}
+
+.rotate {
+    width: 30vh;
+    height: 30vh;
+    position: absolute;
+    // transform: scale(1.25);
+
+    animation: rotating 30s linear 0s infinite both;
+}
+
+@keyframes rotating {
+    0% {
+        transform: scale(1.25) rotate(0deg);
+    }
+
+    100% {
+        transform: scale(1.25) rotate(360deg);
+    }
+}

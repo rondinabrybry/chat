@@ -1,0 +1,51 @@
+.text {
+  &-secondary {
+    @extend .text;
+    font-size: $font-s;
+  }
+
+  &-header {
+    @extend .text;
+    font-size: $font-l;
+    font-weight: bold;
+  }
+
+  &-subheader {
+    @extend .text;
+    font-size: $font-m;
+    font-weight: bold;
+  }
+
+  &-big-header {
+    @extend .text;
+    font-size: $font-xl;
+    font-weight: bold;
+  }
+
+  &-hero {
+    @extend .text;
+    font-size: $font-xxl;
+    font-weight: normal;
+  }
+
+  &.no-wrap {
+    text-wrap: nowrap;
+  }
+
+  &.center {
+    text-align: center;
+  }
+
+  &.light {
+    color: $color-light-text;
+  }
+
+  &.gray {
+    color: $color-mid-text;
+  }
+}
+
+.link {
+  color: $color-accent-2;
+  font-weight: bold;
+}

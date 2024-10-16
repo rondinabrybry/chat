@@ -1,0 +1,366 @@
+:root {
+    --background: #f4f4f4;
+    --primary: #3A485D;
+    --secondary: #668596;
+    --accent: #E6C183;
+    --accent2: #E57F54;
+}
+
+* {
+    box-sizing: 'border-box';
+    margin: 0px;
+    font-family: 'Poppins';
+}
+
+.main-container {
+    background-color: var(--primary);
+    place-self: center;
+
+    height: 80vh;
+    width: 40vw;
+    border-radius: 20px;
+    padding: 0px 20px 20px 20px;
+    box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.636);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+/* -------------- CHAT CONTAINER & BUBBLES ---------------- */
+
+
+
+.small{
+    font-size: 10px;
+}
+
+
+
+
+.update{
+    margin: 10px 0 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 10px;
+}
+
+.update hr.line {
+    border-top: 1px solid black;
+    height: 1px;
+    width: 30%;
+}
+
+
+/* -------- MESSAGES AND SEND BUTTON --------- */
+/* 
+.message-container {
+    height: 10%;
+    width: 100%;
+    display: flex;
+    gap: 10px;
+}
+
+.message-box {
+    height: auto;
+    flex: 3;
+    padding-left: 10px;
+    padding-right: 10px;
+} */
+
+
+
+/* ------------- START BUTTON --------------- */
+
+form {
+    overflow: hidden;
+}
+
+form .start-btn {
+    width: 100%;
+    cursor: pointer;
+    padding: 2%;
+    background-color: var(--background);
+    color: var(--primary);
+    border-radius: 20px;
+
+}
+
+
+.hide {
+    display: none;
+}
+
+/* ------- LOADER --------- */
+
+.loader-container {
+    flex-grow: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 40px;
+}
+
+.loader {
+    width: 50px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: 8px solid #514b82;
+    animation:
+        l20-1 0.8s infinite linear alternate,
+        l20-2 1.6s infinite linear;
+}
+
+@keyframes l20-1 {
+    0% {
+        clip-path: polygon(50% 50%, 0 0, 50% 0%, 50% 0%, 50% 0%, 50% 0%, 50% 0%)
+    }
+
+    12.5% {
+        clip-path: polygon(50% 50%, 0 0, 50% 0%, 100% 0%, 100% 0%, 100% 0%, 100% 0%)
+    }
+
+    25% {
+        clip-path: polygon(50% 50%, 0 0, 50% 0%, 100% 0%, 100% 100%, 100% 100%, 100% 100%)
+    }
+
+    50% {
+        clip-path: polygon(50% 50%, 0 0, 50% 0%, 100% 0%, 100% 100%, 50% 100%, 0% 100%)
+    }
+
+    62.5% {
+        clip-path: polygon(50% 50%, 100% 0, 100% 0%, 100% 0%, 100% 100%, 50% 100%, 0% 100%)
+    }
+
+    75% {
+        clip-path: polygon(50% 50%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 50% 100%, 0% 100%)
+    }
+
+    100% {
+        clip-path: polygon(50% 50%, 50% 100%, 50% 100%, 50% 100%, 50% 100%, 50% 100%, 0% 100%)
+    }
+}
+
+@keyframes l20-2 {
+    0% {
+        transform: scaleY(1) rotate(0deg)
+    }
+
+    49.99% {
+        transform: scaleY(1) rotate(135deg)
+    }
+
+    50% {
+        transform: scaleY(-1) rotate(0deg)
+    }
+
+    100% {
+        transform: scaleY(-1) rotate(-135deg)
+    }
+}
+
+/* ---------------- SCROLLBAR ---------------------- */
+
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+    
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px rgba(128, 128, 128, 0); 
+    border-radius: 10px;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgba(255, 0, 0, 0); 
+    border-radius: 20px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #575757; 
+  }
+
+
+
+
+/* ---------- OPTIONS ----------- */
+
+/* .options {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding: 10px 20px 10px 30px;
+    background-color: #444;
+    gap: 20px;
+    align-items: center;
+    color: white;
+} */
+
+
+
+.option-btn {
+    padding: 10px;
+    border-radius: 40px;
+    background-color: var(--background);
+    color: whitesmoke;
+}
+
+.options .end-options {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+
+    width: 100%;
+    gap: 5px;
+    padding-right: 30px;
+}
+
+
+
+/* ---------- NAVIGATION ---------------- */
+
+
+.navigation {
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    background-color: #f8f8f8;
+    border-top: 1px solid #ddd;
+}
+
+.navigation a {
+    text-align: center;
+    height: 100%;
+    flex-grow: 1;
+    overflow: visible;
+    text-decoration: none;
+    color: #007bff;
+    font-size: 14px;
+}
+
+.navigation a i {
+    display: block;
+    margin: 0 auto 5px;
+    font-size: 24px;
+}
+
+/* ---------------- COMPONENTS ----------------------- */
+
+/* REPORT MENU */
+
+.popup-container {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: grid;
+}
+
+#popup-bg {
+    position: absolute;
+    z-index: 2;
+    height: 100%;
+    width: 100%;
+    background: rgba(114, 114, 114, 0.105);
+
+    -webkit-backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px);
+}
+
+#hold_menu {
+    position: relative;
+    z-index: 3;
+    place-self: center;
+    background-color: #ffc7c7;
+    border-radius: 20px;
+    border: solid rgb(255, 255, 255) 3px;
+    height: 300px;
+    width: 500px;
+    z-index: 5;
+    padding: 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    animation-name: popup;
+    animation-duration: .2s;
+    animation-timing-function: ease-in-out;
+}
+
+.report-form {
+    flex: 1;
+    display: grid;
+    width: 100%;
+    gap: 5px;
+    grid-template-rows: 2fr 2fr .5fr;
+}
+
+.reported-text {
+    place-self: center;
+}
+
+#reason {
+    resize: none;
+}
+
+#report_btn {
+    height: 40px;
+    width: 40%;
+    border-radius: 10px;
+    background-color: rgb(255, 122, 122);
+    border: 3px solid white;
+    color: white;
+    place-self: center;
+}
+
+#report_btn:hover {
+    background-color: rgb(145, 68, 68);
+}
+
+@keyframes popup {
+    0% {
+        transform: scale(.2);
+    }
+
+    80% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* ------------------------------------------------ */
+
+
+/* @media screen and (max-width: 800px) {
+
+    .chat-container{
+        overflow-y: auto;
+        overflow-x: hidden;
+        overflow-wrap: break-word;
+    }
+
+    .message-container{
+        gap: 5px;
+    }
+
+} */

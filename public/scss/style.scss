@@ -1,0 +1,254 @@
+@import "components";
+
+@keyframes swipedown {
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+nav {
+    z-index: 100;
+    @include box-shadow($color-dark-text);
+    background-color: $color-background;
+    padding: $size-xs $size-s;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: fixed;
+    top: 0px;
+    width: 100%;
+
+    a {
+        text-decoration: none;
+    }
+
+    &.home {
+        transform: translateY(-100%);
+        animation: swipedown 1s ease 7s 1 forwards;
+    }
+
+    span {
+        padding: $size-xs $size-s;
+        display: flex;
+        align-self: center;
+        border-bottom: solid 3px transparent;
+        // background-color: red;
+        flex-grow: 1;
+        transform: translateY(5px);
+
+        .icon {
+            padding: $size-xs $size-s;
+            display: flex;
+            flex-grow: 0;
+            align-self: center;
+            width: fit-content;
+            width: auto;
+            transform: translateY(-3.5px);
+            height: 1.2rem;
+            width: 1.2rem;
+        }
+    }
+
+    #burger-menu {
+        display: none;
+    }
+
+    @media only screen and (max-width: 650px) {
+
+
+        li {
+            display: none;
+        }
+
+        .menu>*>li {
+            display: flex;
+        }
+
+
+
+        #burger-menu {
+            display: flex;
+        }
+    }
+
+
+
+    li {
+        text-decoration: none;
+        list-style: none;
+        padding: $size-s $size-m;
+        margin: 0;
+        margin-right: 1rem;
+        @include box-shadow("transparent");
+        @include transition("easeOutExpo", all, 0.4s);
+        // border-radius: $size-xs;
+        cursor: pointer;
+        border-bottom: solid 3px transparent;
+
+        &:hover {
+            border-bottom: solid 3px $color-accent;
+        }
+
+        &.active {
+            border-bottom: solid 3px $color-accent;
+            font-weight: bold;
+        }
+    }
+
+    ul {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .icon {
+        width: 100%;
+    }
+
+    .menu {
+        flex-direction: column;
+        display: flex;
+        position: absolute;
+        right: 1em;
+        top: 3.5em;
+        width: 70%;
+        background-color: $color-background;
+        padding: 0 $size-m;
+        overflow: hidden;
+        @include transition("ease", all, 0.6s);
+
+
+        &.show {
+            @include box-shadow($color-dark-text);
+            height: 10em
+        }
+
+        &.hidden {
+            @include box-shadow("transparent");
+            height: 0px;
+        }
+    }
+}
+
+.greeting {
+    -webkit-user-select: none;
+    /* Safari */
+    -ms-user-select: none;
+    /* IE 10 and IE 11 */
+    user-select: none;
+    /* Standard syntax */
+    font-size: $size-xl;
+    position: absolute;
+    // font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 85vh;
+    width: 100%;
+    opacity: 0;
+    transform: translateY(-25%);
+
+    animation: slidein 5s ease 1.5s 1 forwards;
+}
+
+body.home {
+    &>div {
+        opacity: 0;
+        animation: fadein 1.5s ease 7.5s 1 forwards;
+    }
+}
+
+@keyframes fadein {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes slidein {
+    0% {
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+
+    80% {
+        opacity: 1;
+        transform: translateY(-2%);
+    }
+
+    90% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(20%);
+    }
+}
+
+footer {
+    background-color: $color-dark-text;
+    margin-top: $size-xl;
+    width: 100%;
+
+    &>div {
+        color: $color-light-text;
+        font-size: $font-xs;
+
+        &>*>* {
+            color: $color-light-text;
+            font-size: 0.9em;
+        }
+
+        &>* {
+            color: $color-light-text;
+            font-size: 0.9em;
+        }
+    }
+
+    padding: $size-m 0px;
+}
+
+.hover-icon {
+    @include transition("easeOutExpo", all, 0.35s);
+
+    &:hover {
+        transform: scale(1.2);
+    }
+}
+
+
+
+.carousel {
+    width: 100%;
+    height: 50vh;
+    display: flex;
+    flex-direction: row;
+    overflow-x: scroll;
+    border-radius: $size-s;
+    @include box-shadow($color-dark-text);
+    background-color: rgba($color-dark-text, 0.25);
+
+    @media only screen and (max-width: 650px) {
+
+        height: 50vw;
+
+    }
+
+    img {
+        border-radius: $size-s;
+        margin: $size-xxs;
+    }
+}
