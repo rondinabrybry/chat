@@ -13,7 +13,7 @@ let userIdElement,
     username = $("#username").attr("data-val");
 
 // , {'sync disconnect on unload' : false}
-let socket = io.connect('https://orangered-crocodile-809504.hostingersite.com:8081');
+let socket = io.connect('https://chat-app-m5g2.onrender.com:8081');
 
 // socket.on('connect', function(){
 //     console.log("Connected")
